@@ -6,7 +6,7 @@ function DCM = ECI2ECEF_DCM(time)
 % time ([YYYY,MM,DD,hh,mm,ss] format)
 jd = juliandate(time);
 thetag = siderealTime(jd);
-DCM = [ cosd(thetag) sind(-thetag) 0 ; 
-        sind(thetag) cosd(-thetag) 0 ;
+DCM = [ cosd(thetag) sind(thetag) 0 ; 
+        -sind(thetag) cosd(thetag) 0 ;
         0 0 1];
 end
