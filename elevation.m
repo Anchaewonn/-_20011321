@@ -1,6 +1,6 @@
 %%항공우주공학과 20011321 안채원
 %%우주궤도역학 Week#13 HW -3
-%% input = ENU(nx3,km), el_mask(deg) / output = el(rad)
+%% input = ENU(nx3,km), el_mask(deg) / output = el(deg)
 function el = elevation(ENU, el_mask)
    n = length(ENU);
    el = [];

@@ -92,7 +92,7 @@ BDS_ENU = [];
 for i = 1 : 1440
     % 5.(1) ECEF->GEODETIC
     [lat1,lon1,h1] = ecef2geodetic(wgs84,GPS.ECEF(i,1),GPS.ECEF(i,2),GPS.ECEF(i,3));
-     GPS_geo = [GPS_geo,[lat1,lon1,h1]'];
+    GPS_geo = [GPS_geo,[lat1,lon1,h1]'];
 
     [lat2,lon2,h2] = ecef2geodetic(wgs84,QZSS.ECEF(i,1),QZSS.ECEF(i,2),QZSS.ECEF(i,3));
     QZSS_geo = [QZSS_geo,[lat2,lon2,h2]'];
@@ -119,9 +119,9 @@ QZSS.ENU = QZSS_ENU';
 BDS.ENU = BDS_ENU';
 
 %% 6. Ground Track 
-% geoplot((GPS.GEO(:,1)),(GPS.GEO(:,2)),'*')
-% geoplot((QZSS.GEO(:,1)),(QZSS.GEO(:,2)),'r*')
-% geoplot((BDS.GEO(:,1)),(BDS.GEO(:,2)),'g*')
+geoplot((GPS.GEO(:,1)),(GPS.GEO(:,2)),'*')
+geoplot((QZSS.GEO(:,1)),(QZSS.GEO(:,2)),'r*')
+geoplot((BDS.GEO(:,1)),(BDS.GEO(:,2)),'g*')
 
 %% 7. Skyplot
 GPS.Az = azimuth(GPS.ENU);
